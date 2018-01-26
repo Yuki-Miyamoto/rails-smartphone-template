@@ -1,24 +1,21 @@
-# README
+# これは何？
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Railsでスマートフォン用のサイトを作る際のひな型です。
 
-Things you may want to cover:
+スマートフォン用のUIデザインになるように[Material Kit](https://www.creative-tim.com/product/material-kit)を入れています。
 
-* Ruby version
+なので、テンプレートでHTML要素のclass属性を[Material Kitのドキュメント](http://demos.creative-tim.com/material-kit-pro/docs/2.0/getting-started/introduction.html)を参考に編集すれば簡単にスマートフォン用のデザインになります。
 
-* System dependencies
+また、scaffoldをスマートフォン用にカスタマイズしました。
 
-* Configuration
+具体的にはindexページのテーブルを項目が縦に並ぶようにし、さらに各リンクをボタンに変更しました。
 
-* Database creation
+# 使い方
 
-* Database initialization
+アプリを作成するフォルダに移動して次のコマンドを実行。
 
-* How to run the test suite
+`git clone https://github.com/Yuki-Miyamoto/rails-smartphone-template.git`
 
-* Services (job queues, cache servers, search engines, etc.)
+しばらく待つとrails newしたものと同じフォルダが作成されます。
 
-* Deployment instructions
-
-* ...
+scaffoldを実行するとスマートフォン対応のテンプレートが生成されます。
