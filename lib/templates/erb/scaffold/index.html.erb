@@ -1,0 +1,33 @@
+<p id="notice"><%%= notice %></p>
+
+<h1><%= plural_table_name.titleize %></h1>
+
+<table>
+  <%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+      <tr>
+        <th><%= attribute.human_name %></th>
+        <td><%%= <%= singular_table_name %>.<%= attribute.name %> %></td>
+      </tr>
+    <% end -%>
+    <tr>
+      <th>Updated At</th>
+      <td><%%= <%= singular_table_name %>.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></td>
+    </tr>
+    <tr>
+      <th>Created At</th>
+      <td><%%= <%= singular_table_name %>.created_at.strftime("%Y年%m月%d日 %H時%M分") %></td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <%%= link_to 'Show', <%= singular_table_name %>, class: 'btn btn-primary btn-sm' %>
+        <%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>), class: 'btn btn-primary btn-sm' %>
+        <%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-sm' %>
+      </td>
+    </tr>
+  <%% end %>
+</table>
+
+<br>
+
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_table_name %>_path, class: 'btn btn-primary btn-sm' %>
